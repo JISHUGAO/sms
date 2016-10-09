@@ -1,4 +1,4 @@
-package com.gavingao.sms.sms;
+package com.gavingao.sms;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gavingao.sms.sms.MainActivity">
+    tools:context="com.gavingao.sms.MainActivity">
 
     <include layout="@layout/header"/>
 
