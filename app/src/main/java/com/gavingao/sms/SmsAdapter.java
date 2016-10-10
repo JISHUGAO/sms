@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -47,12 +48,11 @@ public class SmsAdapter extends BaseAdapter {
         } else {
             myView = convertView;
         }
+        TextView mobile = (TextView)myView.findViewById(R.id.mobile_code);
+        TextView content = (TextView)myView.findViewById(R.id.content);
 
-        EditText mobile = (EditText)myView.findViewById(R.id.mobile_code);
-        EditText content = (EditText)myView.findViewById(R.id.content);
-
-        Log.d("------------", list.get(position).getAddress());
-        Log.d("------------", list.get(position).getBody());
+//        Log.d("------------", list.get(position).getAddress());
+   //     Log.d("------------", list.get(position).getBody());
         mobile.setText(list.get(position).getAddress());
         content.setText(list.get(position).getBody());
         return myView;

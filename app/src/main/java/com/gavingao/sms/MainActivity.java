@@ -10,18 +10,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     TextView search;
 
@@ -38,17 +42,41 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        search = (TextView)findViewById(R.id.search);
-        search.setOnClickListener(this);
+      //  search = (TextView)findViewById(R.id.search);
+        //    search.setOnClickListener(this);
 
-        List<SmsBean> appList = getSmsFromPhone();
+        final List<SmsBean> appList = getSmsFromPhone();
         //Gson gson = new Gson();
         //List<SmsBean> appList = gson.fromJson(JSON, new TypeToken<List<SmsBean>>(){}.getType());
+
         SmsAdapter smsAdapter = new SmsAdapter(MainActivity.this, appList);
 
+        //Log.d("--------", m.g);
         ListView listview = (ListView)findViewById(R.id.list);
         listview.setAdapter(smsAdapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, SmsDetail.class);
+                intent.putExtra("address", appList.get(position).getAddress());
+                intent.putExtra("body", appList.get(position).getBody());
+                startActivity(intent);
+                //Toast.makeText(MainActivity.this, appList.get(position).getAddress(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        TextView smsSend = (TextView)findViewById(R.id.sms_send);
+        smsSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SendSMS.class);
+                startActivity(i);
+            }
+        });
     }
+
+
 
     public void onClick(View v) {
         switch (v.getId()) {
@@ -73,9 +101,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 //Log.d("---------------", cur.getString(cur.getColumnIndex("address")));
                 smsList.add(s);
             } while(cur.moveToNext());
-
+            cur.close();
         }
 
         return smsList;
     }
+
+
 }

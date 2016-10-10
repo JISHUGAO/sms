@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Gavin SMS</string>
     <string name="search">搜索</string>
+    <string name="send_sms_title">发送短信</string>
+    <string name="send_code">号码</string>
+    <string name="send_text">发送</string>
 </resources>
