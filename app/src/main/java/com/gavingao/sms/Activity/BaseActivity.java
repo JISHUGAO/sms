@@ -1,4 +1,4 @@
-package com.gavingao.sms;
+package com.gavingao.sms.Activity;
 
 import android.app.Activity;
 import android.os.Build;
@@ -15,6 +15,7 @@ public class BaseActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         init();
     }
 

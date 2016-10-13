@@ -14,15 +14,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".SmsDetail" />
+        <activity android:name=".Activity.SearchActivity" />
+        <activity android:name=".Activity.SmsDetail" />
 
         <receiver android:name=".SmsBroadcast">
             <intent-filter>
@@ -30,7 +30,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".SendSMS"></activity>
+        <activity android:name=".Activity.SendSMS"></activity>
     </application>
 
 </manifest>

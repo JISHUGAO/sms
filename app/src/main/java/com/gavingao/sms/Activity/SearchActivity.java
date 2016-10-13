@@ -1,8 +1,10 @@
-package com.gavingao.sms;
+package com.gavingao.sms.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebView;
+
+import com.gavingao.sms.R;
 
 /**
  * Created by gaoweisong on 16-10-3.

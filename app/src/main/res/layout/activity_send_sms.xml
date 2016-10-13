@@ -4,22 +4,29 @@
     android:id="@+id/activity_send_sms"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gavingao.sms.SendSMS">
+    android:orientation="vertical"
+    tools:context="com.gavingao.sms.Activity.SendSMS">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/colorHeaderBg"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="@color/colorHeaderBg">
 
-        <!--<View
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>-->
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_marginTop="20dp"
+            android:paddingLeft="5dp"
+            android:textSize="16sp"
             android:text="返回"
             android:id="@+id/sms_back"
             android:textColor="@color/textWhite"/>
@@ -33,34 +40,66 @@
             android:id="@+id/sms_send_title"
             android:textColor="@color/textWhite"
             />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/send_code"
-            android:textSize="14sp"
-            />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/send_code"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:textSize="16sp"
             android:text="@string/send_text"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:paddingRight="5dp"
             android:textColor="@color/textWhite"
             android:id="@+id/send"/>
     </RelativeLayout>
 
-    <EditText
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="0dp"
-        android:hint="短信内容"/>
+        android:layout_height="wrap_content"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container_sms_code">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/send_code"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:id="@+id/send_code"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:id="@+id/sms_select"
+                android:text="选择"
+                />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:paddingLeft="5dp"
+            android:hint="短信内容"
+            android:id="@+id/send_content"
+            android:layout_below="@+id/container_sms_code"
+            android:textColorHint="@color/textGrey"/>
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>

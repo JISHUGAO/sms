@@ -4,35 +4,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/colorHeaderBg"
+        />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="@color/colorHeaderBg">
 
-        <!--<View
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>-->
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true"
             android:text="返回"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
             android:id="@+id/sms_detail_back"
             android:textColor="@color/textWhite"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
             android:id="@+id/sms_detail_address"
             android:textColor="@color/textWhite"
             />
     </RelativeLayout>
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/sms_detail_content"/>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/sms_detail_content"
+            android:padding="15dp"
+            android:textSize="25sp"/>
+    </ScrollView>
+
 </LinearLayout>

@@ -1,13 +1,14 @@
-package com.gavingao.sms;
+package com.gavingao.sms.Adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
+
+import com.gavingao.sms.R;
+import com.gavingao.sms.Bean.SmsBean;
 
 import java.util.List;
 
@@ -50,11 +51,13 @@ public class SmsAdapter extends BaseAdapter {
         }
         TextView mobile = (TextView)myView.findViewById(R.id.mobile_code);
         TextView content = (TextView)myView.findViewById(R.id.content);
+        TextView date = (TextView)myView.findViewById(R.id.date);
 
 //        Log.d("------------", list.get(position).getAddress());
    //     Log.d("------------", list.get(position).getBody());
         mobile.setText(list.get(position).getAddress());
         content.setText(list.get(position).getBody());
+        date.setText(list.get(position).getDate());
         return myView;
     }
 }

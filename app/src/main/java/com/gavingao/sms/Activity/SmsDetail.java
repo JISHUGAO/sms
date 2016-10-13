@@ -1,11 +1,11 @@
-package com.gavingao.sms;
+package com.gavingao.sms.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.gavingao.sms.R;
 
 /**
  * Created by Administrator on 2016/10/10 0010.
@@ -20,7 +20,7 @@ public class SmsDetail extends BaseActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         String addressText = bundle.getString("address");
-        String contentText = bundle.getString("content");
+        String contentText = bundle.getString("body");
 
         TextView address = (TextView)findViewById(R.id.sms_detail_address);
         TextView content = (TextView)findViewById(R.id.sms_detail_content);

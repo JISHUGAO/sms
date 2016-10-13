@@ -5,9 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.gavingao.sms.MainActivity">
+    tools:context="com.gavingao.sms.Activity.MainActivity">
 
-   <include layout="@layout/header"/>
+   <!--<include layout="@layout/header"/>-->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorHeaderBg"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="发短信"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            android:textColor="@color/textWhite"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:id="@+id/sms_send"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/search"
+            android:textColor="@color/textWhite"
+            android:text="@string/search"/>
+
+    </RelativeLayout>
 
     <!--<TextView
         android:layout_width="wrap_content"
